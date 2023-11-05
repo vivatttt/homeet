@@ -1,0 +1,220 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>homeet</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/homeet.css' %}">
+  </head>
+  <body>
+    <header class="header">
+      <div id="head_div1">
+        <span id="text1"> homeet </span>
+        <br />
+        <span id="text2"> HSE </span>
+      </div>
+      <div id="head_div2">
+        <button class="navigation_button">Выход из аккаунта</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <div>
+        <button class="navigation_button">На главную</button>
+      </div>
+      <div id="main_div1">
+        <span id="heading1">Создание профиля</span>
+        <span id="heading_add"> / О себе</span>
+      </div>
+      <br>
+      <div class="grey_line"><div class="purp_line_1"></div></div>
+
+      <br />
+      <div id="main_wrapper">
+        <div id="left_part">
+          <form id="mainForm" method="post">
+            {% csrf_token %}
+            <div id="upload_space">
+              <span id="form_text1">Аватар профиля</span>
+              <br />
+              <input type="file" id="actual_btn" accept="image/jpeg, image/png" hidden />
+              <label id="label_btn" for="actual_btn">Загрузить</label>
+              <br />
+              <span id="form_text2"
+                >Загрузите фотографию весом не более 10 мб</span>
+            </div>
+            <br />
+            <div class="placeholder-container">
+              <input
+              id="inpName"
+              type="text"
+              class="input_fields"
+              placeholder=" "
+              name="NameField"
+            />
+            <label id="label_name">Имя и фамилия</label>
+            </div>
+            <span class="error-message" id="nameError"></span>
+            <br />
+
+            <div id="choose_gender">
+              <input type="radio" id="male" name="gender" class="gender_choice" value="male"/>
+              <label for="male">Парень</label>
+              <input type="radio" id="female" name="gender" class="gender_choice" value="female"/>
+              <label for="female">Девушка</label>
+            </div>
+
+        
+            <br />
+
+            <div>
+              <label for="bday"></label>
+              <input type="date" id="bday" name="bday"/>
+            </div>
+
+            
+            <br />
+            <div class="placeholder-container">
+              <input type="text" class="input_fields" placeholder=" " id="inpTelegram" name="TelegramField"/>
+              <label id="label_telegram">Телеграм</label>
+            </div>
+            
+            <span class="error-message" id="telegramError"></span>
+    
+            <br />
+            <div class="placeholder-container">
+              <input
+              type="text"
+              class="input_fields"
+              placeholder=" "
+              id="inpPhoneNumber"
+              name="PhoneField"
+            />
+            <label id="label_phone">Номер телефона</label>
+            </div>
+           
+            <span class="error-message" id="phoneError"></span>
+            <br />
+            <div class="placeholder-container">
+              <textarea id="textarea1" placeholder=" " name="TextField"></textarea>
+              <label id="label_textarea">О себе</label>
+            </div>
+            <span class="error-message" id="textareaError"></span><br />
+            <label for="textarea1" id="label_for_textarea"
+              >Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу
+              завести собаку. Очень люблю читать, играть в хорроры и смотреть
+              аниме. Открыт к общению и взаимопомощи.</label>
+            <br />
+            <br />
+            <button id="button_continue">Продолжить</button>
+          </form>
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
+        <div id="right_part">
+            <span class="rdiv_text1">
+                Так будет выглядеть твоя будущая страница
+            </span>
+            <br>
+            <br>
+            <div id="profile_preview">
+                <div id="wrapper_profile_preview">
+                    <div id="photo">
+                        <div id="photo_replace">
+                            
+                        </div>
+                        <button id="button_show_contacts">Показать контакты</button>
+                    </div>
+                    <div id="information">
+                        <div id="inf_name">
+                          <span id="inf_name_text"></span>
+                        </div>
+                        
+                        <span id="gender_field" class="small_inf"></span> •
+                        <span id="inf_age" class="small_inf"></span> •
+                        <span id="inf_education" class="small_inf"></span>
+                        <div id="inf_work"></div>
+                        <div id="inf_personal">
+                          <p id="p_inf_personal"></p>
+                          <span id="span_inf_personal"></span>
+                        </div>
+                        <div id="wrapper_add_inf"></div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+       
+            <div id="message1">
+                
+                <div class="foot_wrapper">
+                    <div>
+                        <span id="rdiv_text2">Мы совсем ничего про тебя не знаем</span><br><br>
+                        <span id="rdiv_text3">
+                            Расскажи о себе.<br>
+                        Люди пишут тем, кому доверяют. Тем более при поиске соседа
+                    </span>
+                    </div>
+                    <div id="emoji1">
+                        <img src="{% static 'img/emoji1.png' %}" width="35px"/>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+      <br>
+      
+      
+    </main>
+
+    <footer>
+      <div class="grey_line"></div>
+      <br /><br />
+      <br /><br />
+      <br /><br />
+      <span id="footer_heading1">Support@homeet.com</span><br />
+      <span id="footer_heading2">Техническая поддержка</span><br />
+      <br />
+      <br />
+      <br />
+      <div class="foot_wrapper">
+        <div id="footer_id1">
+          <span id="footer_heading3"
+            >О сервисе          Контакты            Политика конфидециалности</span>
+        </div>
+        <div id="footer_id2">
+          <a href="#"><img src="{% static 'img/vk.png' %}" width="35px" /></a>
+          <a href="#"><img src="{% static 'img/telegram.png' %}" width="35px" /></a>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="small_line"></div>
+      <br />
+      <br />
+      <br />
+      <div class="foot_wrapper">
+        <div class="footer_heading4">
+            Предложение не является публичной офертой.<br />Сервис не несет ответственности за действия пользователей, достоверность информации и тд.
+          </div>
+        <div class="footer_heading4">
+            Сделано в <b>бвср</b>
+        </div>
+      </div>
+      
+      <br>
+      <br>
+      <br>
+      <br>
+      
+    </footer>
+    <div class="big_line"></div>
+    <script src="{% static 'js/profile_personal.js' %}"></script>
+  </body>
+</html>

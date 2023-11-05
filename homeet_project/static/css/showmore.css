@@ -1,0 +1,43 @@
+#container{
+    height: 420px;
+    width: 420px;
+    box-sizing: border-box;
+    padding: 10px 20px 10px;
+    background: #000;
+    border-radius: 5px;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container p{
+    color: black;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /*кол-во строк, которые показываются всегда*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#container h4{
+    color: rgb(212, 168, 212);
+}
+
+#span::before{
+    cursor: pointer;
+    content: 'show more';
+    color: purple;
+    
+}
+
+#container.active p{
+    display: block;
+}
+#container.active #span:before{
+    content: 'show less';
+
+}
