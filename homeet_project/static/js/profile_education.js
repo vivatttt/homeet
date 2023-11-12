@@ -171,6 +171,7 @@ document.getElementById("main_form_2").addEventListener("submit", function(event
     if (!(areAllFieldsValid())){
         event.preventDefault();
     }else{
+      
         // здесь делаем, что-то с данными из формы
     }
 });

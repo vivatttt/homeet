@@ -278,6 +278,20 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault(); // предотвращаем отправку формы, если есть неверные данные
       } else {
         //здесь обработка полученных из формы данных + переадресация на следующую страницу
+        const form = document.getElementById('mainForm');
+        const formData = new FormData(form);
+
+        for (const key of formData.keys()) {
+          console.log(key);
+        }
+
+        fetch('http://localhost:8000/', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
       }
     });
 });
