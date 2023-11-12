@@ -1,42 +1,86 @@
+from django.contrib.sessions.models import Session
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import UserModel
-
-user = UserModel()
+from django.contrib import messages
 
 
+from .serializers import UserModelSerializer
+
+from django.views.decorators.csrf import ensure_csrf_cookie
+
+@ensure_csrf_cookie
 def page_personal(request): 
 
     if request.method == 'POST':
-        PersonalInfDict = request.POST
-
-        user.name      = PersonalInfDict['NameField']
-        #user.gender    = request.POST.get('gender') # тк обе кнропки радио имеют одно имя, в словаре лежит просто ['on'] => нужно получить именно значение по имени gender
-        user.gender    = PersonalInfDict['gender']
-        user.bday      = PersonalInfDict['bday']
-        user.telegram  = PersonalInfDict['TelegramField']
-        user.phone     = PersonalInfDict['PhoneField']
-        user.bio       = PersonalInfDict['TextField']
-
-        user.save() # сохраняем объект класса в бд
-
-        return redirect('education_information')
-     
-    return render(request, 'profile_personal.html')
-    
-def page_education(request):
-    if request.method == 'POST':
-        EducationInfDict = request.POST
+        data = request.POST.copy()
+        data.update({'csrfmiddlewaretoken': request.COOKIES['csrftoken']})
         
-        user.condition = EducationInfDict['condition']
-        user.course = EducationInfDict['number']
-        user.step = EducationInfDict['EducationStepField']
-        user.faculty = EducationInfDict['FacultyField']
-        user.op = EducationInfDict['OPField']
-        user.work = EducationInfDict['WorkField']
+        serializer = UserModelSerializer(data=data)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return redirect('education_information')
 
-        user.save() # сохраняем объект класса в бд
+    return render(request, 'profile_personal.html')
 
-        return render(request, 'profile_education.html')
-
+def page_education(request):
+    
     return render(request, 'profile_education.html')
+
+# def page_personal(request): 
+
+#     if request.method == 'POST':
+
+#         serializer = UserModelSerializer(data=request.POST)
+        
+#         if serializer.is_valid():
+#             serializer.save()
+#             # user = serializer.save()
+#             # request.session['user_id'] = user.id
+        
+#         return redirect('education_information')
+     
+#     return render(request, 'profile_personal.html')
+    
+
+  
+
+# class UserModelCreateView(APIView):
+#     def post(self, request, *args, **kwargs):
+#         serializer = UserModelSerialier(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save() # сохранение в бд
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
+
+# def page_personal(request): 
+
+#     if request.method == 'POST':
+
+#         serializer = UserModelSerializer(data=request.POST)
+        
+#         if serializer.is_valid():
+#             serializer.save()
+#             user = serializer.save()
+#             request.session['user_id'] = user.id
+        
+#         return redirect('education_information')
+     
+#     return render(request, 'profile_personal.html')
+    
+# def page_education(request):
+#     if request.method == 'POST':
+#         user_id = request.session.get('user_id')
+#         if not user_id:
+#             return redirect('start_page')  # перенаправляем на страницу ввода личной информации
+
+#         user = UserModel.objects.get(id=user_id)
+#         if request.method == 'POST':
+#             serializer = UserModelSerializer(instance=user, data=request.POST)
+#             if serializer.is_valid():
+#                 serializer.save()
+#                 return render(request, 'profile_education.html')
+#             else:
+#                 messages.error(request, "Invalid data. Please check the form.")
+    
+#     return render(request, 'profile_education.html')
+  
