@@ -1,9 +1,74 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+
+  // получаем уже заполненные ранее данные из датасета и перезаполняем поля
+  var name = document.querySelector('script').dataset.name;
+  var gender = document.querySelector('script').dataset.gender;
+  var bday = document.querySelector('script').dataset.bday;
+  var text = document.querySelector('script').dataset.text;
+
+  console.log(name, gender, bday, text);
+  // имя
+  var box_name = document.getElementById("inf_name");
+  var box_text_name = document.getElementById("inf_name_text");
+    
+  box_text_name.innerHTML = name;
+  box_name.style.background = "#ffffff";
+  box_name.style.height = "auto";
+  // гендер
+  var gender_field = document.getElementById("gender_field");
+  if (gender == 'male'){
+    gender_field.innerHTML = "Парень";
+  }else{
+    gender_field.innerHTML = "Девушка";
+  }
+  gender_field.style.background = "#ffffff";
+  gender_field.style.width = "auto";
+  // возраст
+  var age_field = document.getElementById("inf_age");
+  var currentTime = new Date();
+  var dateEntered = new Date(bday);
+  var age = Math.ceil((currentTime.getTime() - dateEntered.getTime()) /(24 * 3600 * 365.25 * 1000)) -1 +" лет";
+  
+  age_field.innerHTML = age;
+  age_field.style.background = "#ffffff";
+  age_field.style.width = "auto";
+  // био
+  var textareaField = document.getElementById("inf_personal");
+  var textareaFieldP = document.getElementById("p_inf_personal");
+
+  textareaFieldP.innerHTML = text;
+  textareaField.style.background = "#ffffff";
+  textareaField.style.width = "auto";
+  textareaField.style.height = "auto";
+  document.getElementById("span_inf_personal").style.display = "block";
+  
+  // функциональная часть кнопки Развернуть/Свернуть
+  document
+  .getElementById("span_inf_personal")
+  .addEventListener("click", function () {
+    document.getElementById("inf_personal").classList.toggle("active");
+  });
+
+  
+
+
+
   var workInput = document.getElementById("Work");
   var opInput = document.getElementById("OP");
 
   var textWork = document.getElementById("workError");
   var textOP = document.getElementById("opError");
+
+  //перенос уже записанных на прошлой странице данных;
+  // !!!!!!!!!!!!!!!!!!!!!!!
+  
+
+
+  var gender_field = document.getElementById("gender_field");
+
+  
+  
 
   workInput.addEventListener("input", function () {
     var colorWork;
@@ -171,7 +236,8 @@ document.getElementById("main_form_2").addEventListener("submit", function(event
     if (!(areAllFieldsValid())){
         event.preventDefault();
     }else{
-      
+        event.preventDefault();
+        console.log("12 3123 12 12 12 31");
         // здесь делаем, что-то с данными из формы
     }
 });

@@ -156,14 +156,19 @@
                         <button id="button_show_contacts">Показать контакты</button>
                     </div>
                     <div id="information">
-                        <div id="inf_name"></div>
+                        <div id="inf_name">
+                          <span id="inf_name_text"></span>
+                        </div>
                         
-                        <span id="inf_age" class="small_inf"></span> •
+                        <span id="gender_field" class="small_inf"></span> •
                         <span id="inf_age" class="small_inf"></span> •
                         <span id="inf_education" class="small_inf"></span>
                         <br>
                         <div id="inf_work"></div>
-                        <div id="inf_personal"></div>
+                        <div id="inf_personal">
+                          <p id="p_inf_personal"></p>
+                          <span id="span_inf_personal"></span>
+                        </div>
                         <div id="wrapper_add_inf"></div>
                     </div>
                 </div>
@@ -238,6 +243,12 @@
       
     </footer>
     <div class="big_line"></div>
-    <script src="{% static 'js/profile_education.js' %}"></script>
+    <script src="{% static 'js/profile_education.js' %}" 
+    data-name="{{ user.NameField }}" 
+    data-gender="{{ user.gender }}"
+    data-bday="{{ user.bday }}"
+    data-text="{{ user.TextField }}">
+
+    </script>
   </body>
 </html>
