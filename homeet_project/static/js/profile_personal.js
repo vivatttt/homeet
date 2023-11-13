@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  
   // получаем ссылки на поля ввода
   var nameInput = document.getElementById("inpName");
   var telegramInput = document.getElementById("inpTelegram");
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var isMale = document.getElementById("male");
   var isFemale = document.getElementById("female");
 
-  // получаем ссылки на ввод даты
+  // получаем ссылки на ввод даты 
   var dateInput = document.getElementById("bday");
 
   // получаем ссылку на ввод картинки
@@ -281,15 +282,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const form = document.getElementById('mainForm');
         const formData = new FormData(form);
 
-        for (const key of formData.keys()) {
-          console.log(key);
-        }
+        // for (const key of formData.keys()) {
+        //   console.log(key);
+        // }
 
-        fetch('http://localhost:8000/', {
+        fetch('http://localhost:8000', {
             method: 'POST',
             body: formData,
         })
-        .then(response => response.json())
+        .then(response => response.text())
         .then(data => console.log(data))
         .catch(error => console.error('Error:', error));
       }
