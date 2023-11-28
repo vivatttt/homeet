@@ -38,13 +38,13 @@ python manage.py runserver
 ```
 Then open your favorite browser and go to the *locallhost:8000*
 ### Personal information page <br>
-<p align="">
-      <img src="https://i.ibb.co/7vYmtZk/image.png" alt = "personal information page" width="1200">
+<p align="center">
+      <img src="https://i.ibb.co/7vYmtZk/image.png" alt = "personal information page" width="900">
 </p>
 
 ### Education information page <br>
-<p align="">
-      <img src="https://i.ibb.co/gtHJfJN/image.png", alt = "education information page", width="1200">
+<p align="center">
+      <img src="https://i.ibb.co/gtHJfJN/image.png", alt = "education information page" width="900">
 </p>
 
 
