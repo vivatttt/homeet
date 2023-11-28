@@ -10,7 +10,7 @@
 </p>
 
 ## About
-This two-page website is a functional copy of the egistration stage on [homeet](https://homeet.hse.ru/registration)<br><br>
+This two-page website is a functional copy of the registration stage on [homeet](https://homeet.hse.ru/registration)<br><br>
 Made as part of the **Fall School 2023** from ["Бизнес в стиле .RU"](https://vk.com/styleru)
 ### Getting started
 Below is the sequence of actions for launching a project on **Windows OS**
@@ -37,40 +37,19 @@ And finally run the server
 python manage.py runserver
 ```
 Then open your favorite browser and go to the *locallhost:8000*
-### Start page <br>
+### Personal information page <br>
 <p align="">
-      <img src="https://i.ibb.co/68XRJsZ/image.png" alt = "personal information page" width="1200">
+      <img src="https://i.ibb.co/7vYmtZk/image.png" alt = "personal information page" width="1200">
 </p>
 
-### After processing the information <br>
+### Education information page <br>
 <p align="">
       <img src="https://i.ibb.co/gtHJfJN/image.png", alt = "education information page", width="1200">
 </p>
 
-### Example of input data and outcome <br>
-
-<p align="">
-      <img src="#" alt="example of outcome" width="900">
-</p>
-<p align="">
-      <img src="#" alt="example of outcome" width="900">
-</p>
-<p align="">
-      <img src="#" alt="example of outcome" width="900">
-</p>
-
-## Manual
-
->To obtain experimentally any values (for already set data), process them according to the formula and determine the dependence (plot) of the obtained value from the initially set one.
-
 
 ## Documentation
-
-## Libraries
-```java script
-<script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
-```
-
+*Currently in progress <3*
 #### Methods
 
 *Will be here soon ;)*
