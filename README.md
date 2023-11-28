@@ -11,7 +11,7 @@
 
 ## About
 This two-page website is a functional copy of the registration stage on [homeet](https://homeet.hse.ru/registration)
->This site implements both the front-end part (validation of forms on the client side, transferring data to the user's card on the right, form animations) and the back-end part (switching between pages, assembling data from forms, validating on the server side and storage of user models in the database)
+>This site implements both the front-end part (client side form validation, transferring data to the user's card on the right, form animations) and the back-end part (switching between pages, assembling data from forms, validating on the server side and storage of user models in the database)
 <br>
 
 Made as part of the **Fall School 2023** from ["Бизнес в стиле .RU"](https://vk.com/styleru)
