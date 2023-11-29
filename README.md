@@ -1,4 +1,4 @@
-# registration-stage-for-homeet
+![image](https://github.com/vivatttt/homeet/assets/143903636/b37935d1-ab36-4856-a122-93fbeb86d76b)# registration-stage-for-homeet
 <p align="center">
       <img src="https://i.ibb.co/5rMFqyH/image.png" width="270">
 </p>
@@ -46,11 +46,14 @@ Then open your favorite browser and go to the *locallhost:8000*
       <img src="https://i.ibb.co/7vYmtZk/image.png" alt = "personal information page" width="900">
 </p>
 
+[click](https://ibb.co/xGtwG3G) to see the whole page
+
 ### Education information page <br>
 <p align="center">
       <img src="https://i.ibb.co/gtHJfJN/image.png", alt = "education information page" width="900">
 </p>
 
+[click](https://ibb.co/F6WDxdR) to see the whole page
 
 ## Documentation
 *Currently in progress <3*
