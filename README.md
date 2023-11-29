@@ -1,4 +1,3 @@
-![image](https://github.com/vivatttt/homeet/assets/143903636/b37935d1-ab36-4856-a122-93fbeb86d76b)# registration-stage-for-homeet
 <p align="center">
       <img src="https://i.ibb.co/5rMFqyH/image.png" width="270">
 </p>
