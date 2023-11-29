@@ -45,14 +45,14 @@ Then open your favorite browser and go to the *locallhost:8000*
       <img src="https://i.ibb.co/7vYmtZk/image.png" alt = "personal information page" width="900">
 </p>
 
-[click](https://ibb.co/xGtwG3G) to see the whole page
+[click](https://i.ibb.co/5vgCv2v/image.png) to see the whole page
 
 ### Education information page <br>
 <p align="center">
       <img src="https://i.ibb.co/gtHJfJN/image.png", alt = "education information page" width="900">
 </p>
 
-[click](https://ibb.co/F6WDxdR) to see the whole page
+[click](https://i.ibb.co/68XRJsZ/image.png) to see the whole page
 
 ## Documentation
 *Currently in progress <3*
